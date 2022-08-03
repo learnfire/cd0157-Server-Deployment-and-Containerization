@@ -46,6 +46,8 @@ def require_jwt(function):
     def decorated_function(*args, **kws):
         if not 'Authorization' in request.headers:
             abort(401)
+        print("Added for code deployment trigger 1")
+        print("Added for code deployment trigger 2")
         data = request.headers['Authorization']
         token = str.replace(str(data), 'Bearer ', '')
         try:
